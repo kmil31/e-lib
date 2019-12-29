@@ -5,10 +5,11 @@
 <HTML>
     <HEAD>
       <% session=request.getSession();
+
          if(session.getAttribute("user")==null)
          {
-          session.setAttribute("error","U ARE NOT LOGGED IN NIGGA");
-          response.sendRedirect("Login.jsp");
+          session.setAttribute("error","U ARE NOT LOGGED IN DUDE");
+          response.sendRedirect("login.jsp");
          } %>
         <TITLE>E Library</TITLE>
     </HEAD>
@@ -56,12 +57,12 @@
 
           <% if(session.getAttribute("role").equals("admin"))
           {
-            out.println("<a href='add.jsp'>Add shit</a>");
-             out.println("<a href='delete.jsp'>Delete shit</a>");
+            out.println("<a href='add.jsp'>Add a book</a>");
+             out.println("<a href='remove.jsp'>Delete a book</a>");
           }
               else
               {
-              
+              out.println("<a href='return.jsp'></br>Return your book</a>");
               out.println("</br></br></br></br>");
 
 
@@ -77,14 +78,26 @@
              <h2> What do you want to borrow? </h2>
              <form action='borrow' method='POST'>
               <h3>Book name</h3>
-                <input type="text" name='bookname'>
+                <input type="text" name='bookname' required >
               <h3>Quantity to borrow?</h3>
-                <input type="number" min=0; name='quant'>
+                <input type="number" min=0; name='quant' required>
                 <input type="submit" value='Submit' style="margin-left:100px;font-size:60px;">
                 <%
 
               }
 
+          /*   if(session.getAttribute("badmessage")!=null) 
+             {
+              out.println(session.getAttribute("badmessage"));
+              
+             }
+             if(session.getAttribute("goodmessage")!=null)
+             {
+              out.println(session.getAttribute("goodmessage"));
+
+             }
+              session.removeAttribute("goodmessage");
+              session.removeAttribute("badmessage");*/
               %>
 
               

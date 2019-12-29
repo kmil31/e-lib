@@ -63,6 +63,8 @@ public class validate extends HttpServlet {
            catch(Exception e)
            {
             out.println(e);
+            session.setAttribute("wrong","an error occured check ur syntax");
+            response.sendRedirect("add.jsp");
            }
 
 		}
