@@ -3,6 +3,20 @@
 
 
 <HTML>
+
+<style>
+
+             body {
+              background-image: url("background1.jpg");
+             background-attachment: absolute;
+             background-size: 100% 100%;
+             background-repeat: repeat-y;
+             }
+             </style>
+
+             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+         <link rel="stylesheet" href="style.css">
+
     <HEAD>
       <% session=request.getSession();
 
@@ -16,7 +30,9 @@
     </HEAD>
 
     <BODY>
+        <div class="provided">
         <H1>Books that <%out.println(user);%> has borrowed </H1>
+    </div>
 
         <% 
             try{
@@ -29,7 +45,8 @@
             ResultSet resultset = 
             statement.executeQuery("select * from borrowed where user ='"+user+"'");
         %>
-
+<div class="box">
+    <br>
         <TABLE BORDER="1">
             <TR>
                 <TH>Book ID</TH>
@@ -54,9 +71,10 @@
             %>
 
             
-          
+          </div>
         </TABLE>
-          <a href="display.jsp">Back to mainpage </a>
+        <br>
+          <a href="display.jsp"><button>Back to mainpage</button> </a>
 
 
         <br><br><br>
@@ -71,7 +89,7 @@
         <h2> Which book do you want to return? </h2>
 
         <form action='return' method="POST">
-            Book ID &nbsp<input type="text" name="bookid" required> <br>
+            Book ID &nbsp<input type="text" name="bookid" required> <br><br>
             Quantity &nbsp<input type="number" name="quant" required> <br><br>
 
             <input type="submit" value="Submit">

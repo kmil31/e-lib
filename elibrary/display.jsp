@@ -3,6 +3,20 @@
 
 
 <HTML>
+
+<style>
+
+             body {
+              background-image: url("background1.jpg");
+             background-attachment: absolute;
+             background-size: 100% 100%;
+             background-repeat: repeat-y;
+             }
+             </style>
+
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+         <link rel="stylesheet" href="style.css">
+
     <HEAD>
       <% session=request.getSession();
 
@@ -15,7 +29,13 @@
     </HEAD>
 
     <BODY>
-        <H1>Books that are provided </H1>
+      <br>
+      <div class="provided">
+        <H1 ">BOOKS THAT ARE PROVIDED </H1>
+        <br>
+      </div>
+<br>
+<div class="box">
 
         <% 
             out.println(session.getAttribute("user"));
@@ -28,7 +48,8 @@
             ResultSet resultset = 
                 statement.executeQuery("select * from books") ; 
         %>
-
+<br><br>
+ 
         <TABLE BORDER="1">
             <TR>
                 <TH>Book ID</TH>
@@ -49,20 +70,26 @@
           
             
             %>
+ 
+            </TD>
+</TR></TABLE>
 
-            
+</div>
           
         </TABLE>
-          <a href="login.jsp">Back to login </a>
+    
+          
+          <div class="box2">
+<a href='login.jsp'><button>Back to login</button></a>
 
           <% if(session.getAttribute("role").equals("admin"))
           {
-            out.println("<a href='add.jsp'>Add a book</a>");
-             out.println("<a href='remove.jsp'>Delete a book</a>");
+            out.println("<a href='add.jsp'><button>Add a book</button></a>");
+             out.println("<a href='remove.jsp'><button>Delete a book</button></a>");
           }
               else
               {
-              out.println("<a href='return.jsp'></br>Return your book</a>");
+              out.println("<a href='return.jsp'><button>Return your book</button></a>");
               out.println("</br></br></br></br>");
 
 
@@ -74,19 +101,23 @@
                 out.println("<input type='submit' value='Submit'>");  
               
              */ %>
-
+</div>
+<div class="box">
              <h2> What do you want to borrow? </h2>
              <form action='borrow' method='POST'>
-              <h3>Book name</h3>
+              <h3 style="color:black;" >Book name</h3>
                 <input type="text" name='bookname' required >
-              <h3>Quantity to borrow?</h3>
+              <h3 style="color:black";>Quantity to borrow?</h3>
                 <input type="number" min=0; name='quant' required>
-                <input type="submit" value='Submit' style="margin-left:100px;font-size:60px;">
+                <br><br>
+                <input type="submit" value='Submit' style="font-size:20px;">
+                </div>
                 <%
 
               }
 
-          /*   if(session.getAttribute("badmessage")!=null) 
+/*
+            if(session.getAttribute("badmessage")!=null) 
              {
               out.println(session.getAttribute("badmessage"));
               

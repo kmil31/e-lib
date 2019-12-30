@@ -1,0 +1,105 @@
+.center{
+
+  text-align: center;
+  padding: 80px;
+   background-color: #0e360e;
+  width: 500px;
+  border: 15px;
+  margin-left: 500px;
+  margin-top: 130px;
+  border: 2px solid white;
+  
+  }
+
+  .display{
+
+  text-align: center;
+  padding: 80px;
+  
+  width: 500px;
+  border: 15px;
+  margin-left: 500px;
+  margin-top: 130px;
+  border: 2px solid white;
+
+  }
+
+  h1{
+  color: white;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 40px;
+  }
+
+  h3{
+
+color: white;
+  font-size: 20px;
+
+  }
+
+  .text{
+
+  text-align: center;
+  color:white;
+
+  }
+
+  .provided{
+
+    text-align: center;
+    padding: 10px;
+    background-color: #0e360e;
+    border: 15px;
+   
+    border: 2px solid white;
+
+    }
+
+ .box{
+
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    border: 15px;
+    margin: 30px;
+    border: 2px solid black;
+
+    }
+
+    .box3{
+
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    border: 15px;
+    margin: 30px;
+    border: 2px solid black;
+     margin-top: 130px;
+
+    }
+
+    .box2{
+
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    border: 15px;
+    margin: 30px;
+    border: 2px solid black;
+
+    }
+
+    table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: 350px;
+}
+
+th, td {
+  padding: 15px;
+}
