@@ -38,8 +38,7 @@
 <div class="box">
 
         <% 
-            out.println(session.getAttribute("user"));
-            out.println(session.getAttribute("role"));
+          
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection
            ("jdbc:mysql://localhost:3306/sonoo?characterEncoding=latin1&useConfigs=maxPerformance","root","password");
@@ -86,6 +85,7 @@
           {
             out.println("<a href='add.jsp'><button>Add a book</button></a>");
              out.println("<a href='remove.jsp'><button>Delete a book</button></a>");
+              out.println("<a href='view.jsp'><button> View borrowed</button></a>");
           }
               else
               {

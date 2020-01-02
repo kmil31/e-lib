@@ -33,7 +33,7 @@
 
       <form action="validate" method="POST">
 
-        <h1> LOGIN PAGE </h1>
+        <h1 class="spinny"> LOGIN PAGE </h1>
             <br>
         <h3> Username </h2>
         <input  type="text" name ="username" ></br>

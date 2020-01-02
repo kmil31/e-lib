@@ -24,7 +24,7 @@ body {
 
             Statement statement = con.createStatement() ;
             ResultSet resultset = 
-            statement.executeQuery("select * from books");
+            statement.executeQuery("select * from borrowed");
         %>
 <div class="box">
     <br>
@@ -32,8 +32,9 @@ body {
             <TR>
                 <TH>Book ID</TH>
                 <TH>Name</TH>
-                <TH>Author</TH>
-                <TH>Genre</TH>
+                <TH>User</TH>
+                <TH>Borrow Date</TH>
+                <TH>Return Date</TH>
                 <TH>Quantity</TH>
             
             </TR>
@@ -44,6 +45,7 @@ body {
                 <TD> <%= resultset.getString(3) %></TD>
                 <TD> <%= resultset.getString(4) %></TD>
                 <TD> <%= resultset.getString(5) %></TD>
+                <TD> <%= resultset.getString(6) %></TD>
                
             </TR>
             <% } 
@@ -70,25 +72,7 @@ body {
      %>
 
             
-<div class="provided">
-         	<h1> REMOVE A BOOK </h1>
-</div>
-<div class="box3">
-         		<form action="remove" method="POST">
 
-         			<h3 style="color:black"> Book ID 
-         				<input type="number" name="bookid" required>
-
-         			</h3>
-<br>
-         			<input type="submit" value="submit" style="font-size:20px;" required>
-
-
-         		</form>
-                <br>
-
-
-</div>
          </body>
 
 
